@@ -1,0 +1,183 @@
+.team {
+  padding: 60px 0;
+  margin-bottom: 60px;
+}
+.team__list {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 23px;
+  row-gap: 40px;
+}
+.team__item {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  border-radius: 5px;
+  column-gap: 20px;
+  &:nth-child(1) {
+    background-image: linear-gradient(to left, #C9E3F4 0% 75%, #fff 75% 100%);
+  }
+  &:nth-child(2) {
+    background-image: linear-gradient(to left, #DFEEB6 0% 75%, #fff 75% 100%);
+  }
+  &:nth-child(3) {
+    background-image: linear-gradient(to right, #C9E3F4 0% 75%, #fff 75% 100%);
+  }
+  &:nth-child(4) {
+    background-image: linear-gradient(to right, #DFEEB6 0% 75%, #fff 75% 100%);
+  }
+  &:nth-child(2n) {
+    margin-left: auto;
+  }
+}
+.team__item:nth-child(1) > .team-card__box:nth-child(1) ,
+.team__item:nth-child(2) > .team-card__box:nth-child(1) {
+  grid-column: 1 / 4;
+  align-self: center;
+}
+.team__item:nth-child(1) > .team-card__box:nth-child(2),
+.team__item:nth-child(2) > .team-card__box:nth-child(2) {
+  grid-column: 4 / 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px 0px 122px;
+  margin-right: 20px;
+}
+.team__item:nth-child(3) > .team-card__box:nth-child(1) ,
+.team__item:nth-child(4) > .team-card__box:nth-child(1) {
+  grid-column: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px 0px 122px;
+  margin-left: 20px;
+}
+.team__item:nth-child(3) > .team-card__box:nth-child(2),
+.team__item:nth-child(4) > .team-card__box:nth-child(2) {
+  grid-column: 3 / 6;
+  align-self: center;
+}
+.team-card__box {
+  position: relative;
+}
+
+
+.team__item {
+  max-width: 558px;
+}
+
+.team-card__img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 330px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.team-card__name {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 37px;
+  margin-bottom: 10px;
+  color: #FFFFFF;
+}
+.team-card__title {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 14px;
+}
+.team-card__text {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 25px;
+}
+@include breakpoint-down (1070) {
+  .team__list {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+
+
+@include breakpoint-down (558) {
+  .team__list {
+    row-gap: 70px;
+  }
+  .team__item {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    border-radius: 5px;
+    column-gap: 20px;
+    row-gap: 30px;
+    &:nth-child(1) {
+      background-image: linear-gradient(to left, #C9E3F4 0% 75%, #C9E3F4 75% 100%);
+    }
+    &:nth-child(2) {
+      background-image: linear-gradient(to left, #DFEEB6 0% 75%, #DFEEB6 75% 100%);
+    }
+    &:nth-child(3) {
+      background-image: linear-gradient(to right, #C9E3F4 0% 75%, #C9E3F4 75% 100%);
+    }
+    &:nth-child(4) {
+      background-image: linear-gradient(to right, #DFEEB6 0% 75%, #DFEEB6 75% 100%);
+    }
+    &:nth-child(2n) {
+      margin-left: auto;
+    }
+  }
+  .team__item:nth-child(1) > .team-card__box:nth-child(1) ,
+  .team__item:nth-child(2) > .team-card__box:nth-child(1) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  .team__item:nth-child(1) > .team-card__box:nth-child(2),
+  .team__item:nth-child(2) > .team-card__box:nth-child(2) {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 0px;
+    margin-right: 0px;
+    margin-left: 10px;
+  }
+  .team__item:nth-child(3) > .team-card__box:nth-child(1) ,
+  .team__item:nth-child(4) > .team-card__box:nth-child(1) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 0px;
+    margin-left: 10px;
+  }
+  .team__item:nth-child(3) > .team-card__box:nth-child(2),
+  .team__item:nth-child(4) > .team-card__box:nth-child(2) {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+  .team-card__img {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .team-card__name {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 5px;
+  }
+  .team-card__title {
+    font-size: 26px;
+    line-height: 20px;
+    margin-bottom: 7px;
+  }
+  .team-card__text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

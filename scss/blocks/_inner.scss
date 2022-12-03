@@ -1,0 +1,75 @@
+.inner {
+  padding: 150px 0;
+  background-image: url("../img/inner-bg.png"), url("../img/inner-b-bg.png");
+  background-repeat: no-repeat;
+  background-position: center -30px, center calc(100% + 40px);
+  background-size: 1800px 100px;
+  background-color: #FEA3AC;
+  margin: 60px 0;
+}
+.inner__list {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  justify-content: space-between;
+}
+.inner__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 10px;
+  }
+  &:nth-child(1)::before {
+    background-image: url("../img/inner-item1.svg");
+  }
+  &:nth-child(2)::before {
+    background-image: url("../img/inner-item2.svg");
+  }
+  &:nth-child(3)::before {
+    background-image: url("../img/inner-item3.svg");
+  }
+  &:nth-child(4)::before {
+    background-image: url("../img/inner-item4.svg");
+  }
+}
+.inner-card__number {
+  font-family: "Waiting for the Sunrise";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 60px;
+  color: #DFEEB6;
+}
+.inner-card__text {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  color: #FFFFFF;
+}
+
+
+@include breakpoint-down (1000) {
+  .inner__list {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+  }
+}
+@include breakpoint-down (500) {
+  .inner {
+    margin: 30px 0;
+  }
+  .inner__list {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 50px;
+  }
+}
